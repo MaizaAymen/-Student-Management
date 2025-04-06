@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import axios from "axios"
 import "./Auth.css"
@@ -80,13 +82,110 @@ const Auth = () => {
 
   return (
     <div className="auth-container">
-      <div className="pen-animation">
+      {/* Library of Books */}
+      <div className="library">
+        {/* Main Book */}
+        <div className="book-container book1">
+          <div className="book realistic-book">
+            <div className="book-spine"></div>
+            <div className="book-cover">
+              <div className="book-title">Student Login</div>
+              <div className="book-author">Campus Portal</div>
+            </div>
+            <div className="book-page page1">
+              <div className="page-content">
+                <div className="page-text-line"></div>
+                <div className="page-text-line"></div>
+                <div className="page-text-line"></div>
+              </div>
+            </div>
+            <div className="book-page page2">
+              <div className="page-content">
+                <div className="page-text-line"></div>
+                <div className="page-text-line"></div>
+                <div className="page-text-line"></div>
+              </div>
+            </div>
+            <div className="book-page page3">
+              <div className="page-content">
+                <div className="page-text-line"></div>
+                <div className="page-text-line"></div>
+                <div className="page-text-line"></div>
+              </div>
+            </div>
+            <div className="book-back"></div>
+          </div>
+        </div>
+
+        {/* Additional Books */}
+        <div className="book-container book2">
+          <div className="book realistic-book green-book">
+            <div className="book-spine"></div>
+            <div className="book-cover"></div>
+            <div className="book-back"></div>
+          </div>
+        </div>
+
+        <div className="book-container book3">
+          <div className="book realistic-book red-book">
+            <div className="book-spine"></div>
+            <div className="book-cover"></div>
+            <div className="book-back"></div>
+          </div>
+        </div>
+
+        <div className="book-container book4">
+          <div className="book realistic-book blue-book">
+            <div className="book-spine"></div>
+            <div className="book-cover"></div>
+            <div className="book-back"></div>
+          </div>
+        </div>
+
+        <div className="book-container book5">
+          <div className="book realistic-book yellow-book">
+            <div className="book-spine"></div>
+            <div className="book-cover"></div>
+            <div className="book-back"></div>
+          </div>
+        </div>
+
+        <div className="book-container book6">
+          <div className="notebook">
+            <div className="notebook-cover">
+              <div className="notebook-lines"></div>
+            </div>
+            <div className="notebook-spiral"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Pen Animations */}
+      <div className="pen-animation pen1">
         <div className="pen">
           <div className="pen-cap"></div>
           <div className="pen-body"></div>
           <div className="pen-tip"></div>
         </div>
         <div className="ink-trail"></div>
+      </div>
+
+      <div className="pen-animation pen2">
+        <div className="pen red-pen">
+          <div className="pen-cap"></div>
+          <div className="pen-body"></div>
+          <div className="pen-tip"></div>
+        </div>
+        <div className="ink-trail red-ink"></div>
+      </div>
+
+      <div className="pen-animation pen3">
+        <div className="pen green-pen">
+          <div className="pen-cap"></div>
+          <div className="pen-body"></div>
+          <div className="pen-tip"></div>
+        </div>
+        <div className="ink-trail green-ink"></div>
       </div>
 
       <div className="auth-card">
