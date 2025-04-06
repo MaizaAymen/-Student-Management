@@ -42,16 +42,8 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <h2>Dashboard</h2>
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search students..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button className="search-button">Search</button>
-        </div>
+        
+       
       </div>
 
       <div className="stats-container">

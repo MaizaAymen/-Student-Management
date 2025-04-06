@@ -23,36 +23,38 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-
+# seul valeur
 # Route to add an etudiant
 @app.post("/etudiants/", response_model=EtudiantSchema)
 async def add_etudiant(etudiant: EtudiantSchema):
-    # Create a dict from the schema to insert into the database
     etudiant_dict = etudiant.dict(exclude_unset=True)
-
-    # Insert into the MongoDB
     result = await etudiants_collection.insert_one(etudiant_dict)
 
-    # Add the generated _id to the returned schema
     if result.inserted_id:
         etudiant_dict["_id"] = str(result.inserted_id)  # Convert ObjectId to string
         return etudiant_dict
 
     raise HTTPException(status_code=400, detail="Failed to add student")
+
+
+# Get all students
 @app.get("/etudiants/", response_model=List[EtudiantSchema])
 async def get_etudiants():
-    # Fetch students from the database
     etudiants = []
     async for etudiant in etudiants_collection.find():
         etudiant["_id"] = str(etudiant["_id"])  # Convert ObjectId to string for consistency
         etudiants.append(etudiant)
     return etudiants
 
+
+# Get student count
 @app.get("/etudiants/count")
 async def get_students_count():
     count = await etudiants_collection.count_documents({})
     return {"total_students": count}
 
+
+# Delete student by ID
 @app.delete("/etudiants/{id}")
 async def delete_etudiant(id: str):
     result = await etudiants_collection.delete_one({"_id": ObjectId(id)})
@@ -61,6 +63,7 @@ async def delete_etudiant(id: str):
     raise HTTPException(status_code=404, detail="Student not found")
 
 
+# Route to add a course
 @app.post("/courses/", response_model=CourseSchema)
 async def add_course(course: CourseSchema):
     course_dict = course.dict(exclude_unset=True)
@@ -73,6 +76,7 @@ async def add_course(course: CourseSchema):
     raise HTTPException(status_code=400, detail="Failed to add course")
 
 
+# Get all courses
 @app.get("/courses/", response_model=List[CourseSchema])
 async def get_courses():
     courses = []
@@ -80,7 +84,9 @@ async def get_courses():
         course["_id"] = str(course["_id"])  # Convert ObjectId to string
         courses.append(course)
     return courses
-# Sample route for a message
+
+
+# Sample root route for message
 @app.get("/")
 async def root():
     return {"message": "Hello World"}

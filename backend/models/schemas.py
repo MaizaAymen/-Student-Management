@@ -1,7 +1,7 @@
 from pydantic import BaseModel, EmailStr
 from typing import Optional
 from bson import ObjectId
-
+# isma3ni ya isnsan rahi base
 class EtudiantSchema(BaseModel):
     _id: Optional[str] = None  # This will store the ObjectId as a string
     nom: str
