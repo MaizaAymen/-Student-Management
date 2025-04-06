@@ -17,8 +17,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AddEtudiant />} />
-        <Route path="/Auth" element={<Auth />} />
+        <Route path="/AddEtudiant" element={<AddEtudiant />} />
+        <Route path="/" element={<Auth />} />
           <Route path="/StudentTable" element={<StudentTable />} />
           <Route path="/Navbar" element={<Navbar />} />
           <Route path="/Dashboard" element={<Dashboard />} />
