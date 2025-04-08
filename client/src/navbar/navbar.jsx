@@ -40,6 +40,11 @@ export default function Navbar() {
                 DASHBOARD
               </a>
             </li>
+            <li className="nav-item">
+              <a href="/HomePage" className="nav-link">
+                PROFILE
+              </a>
+            </li>
 
           </ul>
         </div>

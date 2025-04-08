@@ -1,8 +1,8 @@
 /* Base styles and variables */
 :root {
-  --primary-color: #6c63ff;
-  --primary-light: #8f88ff;
-  --primary-dark: #5a52e0;
+  --primary-color: #877d4f;
+  --primary-light: #ff8888;
+  --primary-dark: #000000;
   --secondary-color: #f50057;
   --text-color: #333;
   --text-light: #666;
@@ -14,7 +14,7 @@
   --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
   --pen-color: #2c3e50;
-  --ink-color: #6c63ff;
+  --ink-color: #660000;
 
   /* Book Colors */
   --book-purple: #8e44ad;
